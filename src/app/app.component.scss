@@ -16,17 +16,17 @@
       }
     }
     
-    // Specific positions might need adjustment
-    .traffic-light:first-child { // North
+ 
+    .traffic-light:first-child { 
       top: 20%;
     }
-    .traffic-light:nth-child(2) { // East
+    .traffic-light:nth-child(2) { 
       right: 20%;
     }
-    .traffic-light:nth-child(3) { // South
+    .traffic-light:nth-child(3) { 
       bottom: 20%;
     }
-    .traffic-light:last-child { // West
+    .traffic-light:last-child { 
       left: 20%;
     }
   }
