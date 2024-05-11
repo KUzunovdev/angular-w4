@@ -1,0 +1,35 @@
+.traffic-light {
+    width: 50px;
+    height: 150px;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    
+    .light {
+      flex: 1;
+      border: 1px solid black;
+      background-color: gray; // Default background
+      opacity: 0.3;
+  
+      &.red {
+        background-color: red;
+      }
+  
+      &.yellow {
+        background-color: yellow;
+      }
+  
+      &.green {
+        background-color: green;
+      }
+  
+      &.on {
+        opacity: 1;
+      }
+    }
+    
+    &.red .red { @extend .on; }
+    &.yellow .yellow { @extend .on; }
+    &.green .green { @extend .on; }
+  }
+  
