@@ -12,13 +12,20 @@ export class TrafficLightComponent implements OnInit{
   
   @Input() color: 'red' | 'yellow' | 'green' = 'red';
 
+  @Input() orientation: 'horizontal' | 'vertical' = 'horizontal';
+
   
 
   ngOnInit(): void {
     
   }
 
-  
+  handleButtonClick() {
+    if (this.color === 'yellow') {
+      alert("Incorrect crossing");
+    } 
+  }
+
 
   
 

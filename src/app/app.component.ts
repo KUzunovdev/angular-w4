@@ -47,6 +47,15 @@ export class AppComponent implements OnInit{
       this.colorSet2 = nextColor2;
     }, 2000); 
   }
+
+  handleButtonClick(position: string) {
+    let color = position === 'North' || position === 'South' ? this.colorSet1 : this.colorSet2;
+    if (color === 'yellow') {
+      alert('Incorrect crossing at ' + position);
+    } else if (color === 'green') {
+      // Correct crossing does not need alert
+    }
+  }
   
 
   

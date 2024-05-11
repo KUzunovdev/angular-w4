@@ -4,6 +4,12 @@
     border: 1px solid black;
     display: flex;
     flex-direction: column;
+    position: relative;
+
+
+    &.vertical {
+        transform: rotate(90deg);
+      }
     
     .light {
       flex: 1;
@@ -31,5 +37,30 @@
     &.red .red { @extend .on; }
     &.yellow .yellow { @extend .on; }
     &.green .green { @extend .on; }
+
+  
+
+      
   }
+
+  .button-wrapper{
+
+    position: absolute;
+
+  .cross-button{
+    margin-top: 10px;
+    padding: 5px 10px;
+    align-self: center;
+    background-color: #f1f1f1;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+
+
+    &:disabled {
+        opacity: 0.5;
+      }
+  }
+}
+
   

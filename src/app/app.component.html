@@ -1,22 +1,22 @@
 <div class="intersection">
   <app-traffic-light
     [color]="colorSet1"
-    class="traffic-light vertical"
+    orientation="vertical"
+    class="north"
   ></app-traffic-light>
-  <!-- North -->
   <app-traffic-light
     [color]="colorSet2"
-    class="traffic-light horizontal"
+    orientation="horizontal"
+    class="east"
   ></app-traffic-light>
-  <!-- East -->
   <app-traffic-light
     [color]="colorSet1"
-    class="traffic-light vertical"
+    orientation="vertical"
+    class="south"
   ></app-traffic-light>
-  <!-- South -->
   <app-traffic-light
     [color]="colorSet2"
-    class="traffic-light horizontal"
+    orientation="horizontal"
+    class="west"
   ></app-traffic-light>
-  <!-- West -->
 </div>
