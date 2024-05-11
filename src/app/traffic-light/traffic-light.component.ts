@@ -10,15 +10,18 @@ import { CommonModule } from '@angular/common';
 })
 export class TrafficLightComponent implements OnInit{
   
-  @Input() color: 'red' | 'yellow' | 'green' = 'red';
+  @Input() color: 'red' | 'yellow' | 'green' | 'off' = 'red';
 
   @Input() orientation: 'horizontal' | 'vertical' = 'horizontal';
+
+
 
   
 
   ngOnInit(): void {
     
   }
+
 
   handleButtonClick() {
     if (this.color === 'yellow') {

@@ -11,9 +11,12 @@ import { TrafficLightComponent } from './traffic-light/traffic-light.component';
   styleUrl: './app.component.scss'
 })
 export class AppComponent implements OnInit{
+  colorSet1: 'red' | 'yellow' | 'green' | 'off' = 'red';
+  colorSet2: 'red' | 'yellow' | 'green' | 'off' = 'green';
 
-  colorSet1: 'red' | 'yellow' | 'green' = 'red';  // North-South
-  colorSet2: 'red' | 'yellow' | 'green' = 'green'; // East-West
+  
+  crashButtonDisabled: boolean = false;
+  blinkInterval: any;
 
   ngOnInit(): void {
     this.manageTrafficLights();
@@ -56,7 +59,35 @@ export class AppComponent implements OnInit{
       // Correct crossing does not need alert
     }
   }
-  
+
+
+  handleCrash() {
+    if (!this.crashButtonDisabled) {
+      this.crashButtonDisabled = true;
+      this.startBlinking();
+
+      setTimeout(() => {
+        clearInterval(this.blinkInterval); 
+        this.restoreLights(); 
+        this.crashButtonDisabled = false; 
+      }, 10000);
+    }
+  }
+
+  startBlinking() {
+    let showYellow = true;
+    this.blinkInterval = setInterval(() => {
+      this.colorSet1 = showYellow ? 'yellow' : 'off';
+      this.colorSet2 = showYellow ? 'yellow' : 'off';
+      showYellow = !showYellow;
+    }, 500); // Blink every 500 ms
+  }
+
+  restoreLights() {
+    this.colorSet1 = 'red';
+    this.colorSet2 = 'green';
+  }
+
 
   
 }

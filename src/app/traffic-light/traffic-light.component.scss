@@ -32,6 +32,11 @@
       &.on {
         opacity: 1;
       }
+
+      &.off {
+        background-color: #333; 
+        opacity: 0.1; 
+      }
     }
     
     &.red .red { @extend .on; }

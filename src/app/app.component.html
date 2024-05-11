@@ -19,4 +19,11 @@
     orientation="horizontal"
     class="west"
   ></app-traffic-light>
+  <button
+    (click)="handleCrash()"
+    [disabled]="crashButtonDisabled"
+    class="crash-button"
+  >
+    Crash
+  </button>
 </div>

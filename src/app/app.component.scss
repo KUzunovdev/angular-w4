@@ -9,9 +9,9 @@
   }
   
   app-traffic-light {
-    // Adjust the size of each traffic light if necessary
-    width: 50px;  // This width should match the setting inside the traffic-light component
-    height: 150px; // This height should match the setting inside the traffic-light component
+   
+    width: 50px;  
+    height: 150px; 
   
     &.north {
       grid-column: 2 / 3;
@@ -35,4 +35,21 @@
       
     }
   }
+
+  button.crash-button {
+    grid-column: 2 / 3;  
+    grid-row: 2 / 3;     
+    z-index: 10;         
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: red; 
+    color: white;
+  
+    &:disabled {
+      background-color: grey;
+      cursor: not-allowed;
+    }
+}
+
+  
   
